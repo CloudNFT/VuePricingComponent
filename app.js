@@ -9,7 +9,7 @@ const app = Vue.createApp({
     methods:{
         test(){
             const slider = document.querySelector('#price')
-            document.querySelector('#discount').checked = false;
+            document.querySelector('#discount').checked = true ? false : null;
 
             if(slider.value == 0){
                 this.pageViews = "10k "
@@ -38,11 +38,18 @@ const app = Vue.createApp({
                 this.monthPrice = ""
                 this.monthPrice =  discountPrice
         } else if(document.querySelector('#discount').checked === false) {
-            console.log(this.monthPrice)
             this.monthPrice = originalPrice
         }
+    },
+
+    rotate(){
+        const btn = document.querySelector('button');
+
+        btn.classList.add('rotate')
     }
-}
+},
+
 })
 
 app.mount('#app')
+

@@ -1,19 +1,88 @@
 body{
     font-family: $main-font;
     background-image: url($background);
-    color:black;
+    background-repeat: no-repeat;
     position:relative;
     z-index: -5;
+    margin: 0 5%;;
 }
 
 header{
-    margin:25% 0;
+    padding: 25% 0;
     display:flex;
     flex-direction: column;
     text-align: center;
+    background-image: url(../assets/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
     
     h1{
-        font-size: 14px;
+        font-size: 1.25em;
+        margin-bottom: 5%;
+    }
+
+    p{
+        font-size: 0.75em;
+        margin: 0;
     }
 }
-    
+    @media screen and (min-width:965px){
+        body{
+            // background-repeat: repeat-x;
+            font-size:25px;
+        }
+
+        header{
+            padding:10% 0;
+        }
+
+        section{
+            width:50%;
+            margin:auto; 
+           
+            .pricing-toggle{
+                padding:0%;
+                margin:0%;
+            }
+            
+        }
+
+    }
+
+    @media screen and (min-width:1440px){
+
+        body{
+            background-size:cover;
+        }
+        header{
+            padding-bottom:5%;
+        }
+
+       
+        .footer{
+            ul{
+                margin-top:5%;
+            }
+            button{
+                margin-top:5%;
+            }
+        } 
+        
+    }
+
+    @media screen and (min-width:1700px){
+
+        header{
+            padding:5% 0;
+        }
+        
+        .footer{
+            ul{
+                margin-top:5%;
+            }
+            button{
+                margin-top:5%;
+            }
+        }
+    }

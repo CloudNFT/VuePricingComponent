@@ -1,29 +1,6 @@
-
-input[type=range]{
-    width: 100%;
+input{
+    width: 90%;
 }
 
-input[type=range]{
-    -webkit-appearance: none;
-}
 
-input[type=range]::-webkit-slider-runnable-track {
-    height: .35em;
-    background: hsl(174, 86%, 45%);
-    border: none;
-    border-radius: 3px;
-}
 
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 1.7em;
-    width: 2em;
-    border-radius: 50%;
-    background-image: url(../assets/icecream_black_24dp.svg) ;
-    margin-top: -4px;
-}
-
-input[type=range]:focus {
-    outline: none;
-}

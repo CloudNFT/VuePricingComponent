@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
 body {
-  font-family: "Share Tech Mono", monospace;
-  background-image: url("../assets/background.jpg");
-  color: black;
+  font-family: "Manrope", sans-serif;
+  background-image: url("../assets/background.svg");
+  background-repeat: no-repeat;
   position: relative;
   z-index: -5;
+  margin: 0 5%;
 }
 
 header {
-  margin: 25% 0;
+  padding: 25% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,26 +18,94 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  background-image: url(../assets/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 header h1 {
-  font-size: 14px;
+  font-size: 1.25em;
+  margin-bottom: 5%;
+}
+
+header p {
+  font-size: 0.75em;
+  margin: 0;
+}
+
+@media screen and (min-width: 965px) {
+  body {
+    font-size: 25px;
+  }
+  header {
+    padding: 10% 0;
+  }
+  section {
+    width: 50%;
+    margin: auto;
+  }
+  section .pricing-toggle {
+    padding: 0%;
+    margin: 0%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-size: cover;
+  }
+  header {
+    padding-bottom: 5%;
+  }
+  .footer ul {
+    margin-top: 5%;
+  }
+  .footer button {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  header {
+    padding: 5% 0;
+  }
+  .footer ul {
+    margin-top: 5%;
+  }
+  .footer button {
+    margin-top: 5%;
+  }
 }
 
 section {
   background: white;
   border-radius: 5%;
-  -webkit-box-shadow: 2px 9px 36px #888888;
-          box-shadow: 2px 9px 36px #888888;
-  padding: 20% 0;
+  -webkit-box-shadow: 2px 9px 20px #cdd7ee;
+          box-shadow: 2px 9px 20px #cdd7ee;
+  padding: 10% 0;
 }
 
 .pricing {
   text-align: center;
 }
 
+.pricing h2 {
+  font-size: 0.9375em;
+  margin-bottom: 10%;
+  color: #858fad;
+  letter-spacing: 1px;
+}
+
+.pricing p {
+  color: #858fad;
+}
+
+.pricing #month-price {
+  font-size: 2.5em;
+  color: black;
+}
+
 .pricing-toggle {
-  font-size: 13px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,7 +117,38 @@ section {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin: 25% 0;
+  margin: 25% 0 10% 0;
+  padding-bottom: 10%;
+  font-size: 0.8125em;
+  color: #858fad;
+  border-bottom: solid 1px #cdd7ee;
+}
+
+.pricing-toggle #discount-tag {
+  text-align: center;
+  font-size: 0.625em;
+  background: #feece7;
+  color: #ff8c66;
+  border-radius: 22%;
+  padding: 0.3125em;
+  width: 10%;
+}
+
+.pricing-toggle .yearly {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pricing-toggle .yearly p {
+  padding-left: 1.5em;
 }
 
 .footer {
@@ -59,36 +159,95 @@ section {
   padding: 0;
 }
 
+.footer img {
+  padding-right: 0.625em;
+}
+
 .footer li {
+  font-size: 0.75em;
   list-style: none;
+  color: #858fad;
+  padding: 0.3125em;
 }
 
-input[type=range] {
-  width: 100%;
+input {
+  width: 90%;
 }
 
-input[type=range] {
-  -webkit-appearance: none;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
-  height: .35em;
-  background: #10d5c2;
-  border: none;
-  border-radius: 3px;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: none;
-  height: 1.7em;
-  width: 2em;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  transform: translateX(25px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
   border-radius: 50%;
-  background-image: url(../assets/icecream_black_24dp.svg);
-  margin-top: -4px;
 }
 
-input[type=range]:focus {
-  outline: none;
+.footer button {
+  background: #293356;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  color: #bdccff;
+}
+
+.footer .rotate {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 /*# sourceMappingURL=style.css.map */

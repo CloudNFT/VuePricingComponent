@@ -1,27 +1,61 @@
 section{
     background: $pricing-background;
     border-radius: 5%;
-    box-shadow: 2px 9px 36px #888888;
-    padding:20% 0;
-    
+    box-shadow: 2px 9px 20px $background-blur;
+    padding:10% 0;   
 }
 
 .pricing{
     text-align: center;
-   
-    
+
     h2{
-        
+        font-size:0.9375em;
+        margin-bottom: 10%;
+        color:$secondary-font;
+        letter-spacing: 1px;
     }
+
+    p{
+        color: $secondary-font;
+    }
+
+    #month-price{
+        font-size: 2.5em;
+        color:black;
+    }
+
 }
 
 .pricing-toggle{
-    font-size:13px;
     width:100%;
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin:25% 0;
+    margin:25% 0 10% 0;
+    padding-bottom: 10%;
+    font-size:0.8125em;
+    color: $secondary-font;   
+    border-bottom: solid 1px  hsl(223, 50%, 87%);
+
+    #discount-tag{
+        text-align: center;
+        font-size: 0.625em;
+        background: $discount-background;
+        color: $discount-font;
+        border-radius: 22%;
+        padding: 0.3125em;
+        width: 10%;
+    }
+
+    .yearly{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        p{
+            padding-left:1.5em;
+        }
+    }
+
 }
 
 .footer{
@@ -29,9 +63,13 @@ section{
     ul{
         padding: 0;
     }
+    img{
+        padding-right: 0.625em;
+    };
     li{
+        font-size: 0.75em;
         list-style: none;
-    }
-
-    
+        color: $secondary-font;
+        padding: 0.3125em;
+    };
 }
