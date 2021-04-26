@@ -1,0 +1,37 @@
+section{
+    background: $pricing-background;
+    border-radius: 5%;
+    box-shadow: 2px 9px 36px #888888;
+    padding:20% 0;
+    
+}
+
+.pricing{
+    text-align: center;
+   
+    
+    h2{
+        
+    }
+}
+
+.pricing-toggle{
+    font-size:13px;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin:25% 0;
+}
+
+.footer{
+    text-align: center;
+    ul{
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+
+    
+}
